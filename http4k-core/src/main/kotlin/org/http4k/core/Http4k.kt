@@ -2,9 +2,9 @@ package org.http4k.core
 
 import org.http4k.routing.RoutingHttpHandler
 
-typealias HttpHandler = (Request) -> Response
+typealias HttpHandler = (request: Request) -> Response
 
-fun interface Filter : (HttpHandler) -> HttpHandler {
+fun interface Filter : (next: HttpHandler) -> HttpHandler {
     companion object
 }
 
